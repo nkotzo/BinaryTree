@@ -41,7 +41,13 @@ class BinaryTree {
         if (root.value == value) {
             return true;
         }
-        return value < root.value ? searchRec(root.left, value) : searchRec(root.right, value);
+        // return value < root.value ? searchRec(root.left, value) : searchRec(root.right, value);
+        // Maybe a little more clear.
+         if (value < root.value) {
+            return searchRec(root.left, value);
+        } else { 
+            return searchRec(root.right, value);        
+        }
     }
 
     // In-order traversal of the binary tree
